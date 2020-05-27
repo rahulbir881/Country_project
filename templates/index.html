@@ -5,6 +5,26 @@
     <title>Country_Home</title>
 </head>
 <body>
-<h3>This is home page</h3>
+{% include 'base.html'%}
+<div class="row">
+    <div class="col-md-2">
+<!--        continents-->
+        <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">ALL Country
+  </a>
+            {% for k in continent %}
+  <a href="#" class="list-group-item list-group-item-action">{{k.name}}</a>
+            {% endfor %}
+
+</div>
+
+    </div>
+    <div class="col-md-10">
+<!--        country-->
+
+    </div>
+
+</div>
+
 </body>
 </html>

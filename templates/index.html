@@ -7,22 +7,47 @@
 <body>
 {% include 'base.html'%}
 <div class="row">
-    <div class="col-md-2">
-<!--        continents-->
+    <div class="col-md-2 mt-3">
+        <!--        continents-->
         <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active">ALL Country
-  </a>
+            <a href="/" class="list-group-item list-group-item-action active">ALL Country
+            </a>
             {% for k in continent %}
-  <a href="#" class="list-group-item list-group-item-action">{{k.name}}</a>
+            <a href="/country/{{k.pk}}" class="list-group-item list-group-item-action">{{k.name}}</a>
             {% endfor %}
+
+        </div>
+
+    </div>
+
+    <!--        country-->
+
+    <div class="col-md-10 mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-columns">
+                    {% for k in country %}
+                    <div class="card">
+                        <img src="/media/{{k.flag}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{k.name}}</h5>
+
+                            <a href="/details/{{k.pk}}" class="btn btn-primary">Details</a>
+
+                        </div>
+                    </div>
+                     {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
 
 </div>
 
-    </div>
-    <div class="col-md-10">
-<!--        country-->
-
-    </div>
+</div>
 
 </div>
 
